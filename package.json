@@ -1,0 +1,31 @@
+{
+    "type": "module",
+    "scripts": {
+        "test": "jest"
+    },
+    "jest": {
+        "transform": {
+            "^.+\\.js$": "babel-jest"
+        }
+    },
+    "name": "inst377-umd-inst377-groupproject",
+    "version": "1.0.0",
+    "description": "SnackTrack, a Fitness tracker",
+    "main": "script.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/niannie/INST377-UMD-inst377-groupproject.git"
+    },
+    "author": "Annie Ni, Melvin Quintanilla",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/niannie/INST377-UMD-inst377-groupproject/issues"
+    },
+    "homepage": "https://github.com/niannie/INST377-UMD-inst377-groupproject#readme",
+    "devDependencies": {
+        "@babel/preset-env": "^7.25.8",
+        "babel-jest": "^29.7.0",
+        "jest": "^29.7.0"
+    }
+}
+
