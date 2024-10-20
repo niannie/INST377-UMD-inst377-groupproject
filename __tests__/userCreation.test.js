@@ -1,5 +1,5 @@
 // __tests__/userCreation.test.js
-import UserCreation from '../src/userCreation.js';
+import UserCreation from '../src/Javascripts/userCreation.js';
 
 describe('UserCreation', () => {
     test('should create a user with the provided properties', () => {
