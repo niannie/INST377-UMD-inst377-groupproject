@@ -1,6 +1,6 @@
 // __tests__/userDatabase.test.js
-import UserCreation from '../src/userCreation.js';
-import UserDatabase from '../src/userDatabase.js';
+import UserCreation from '../src/Javascripts/userCreation.js';
+import UserDatabase from '../src/Javascripts/userDatabase.js';
 
 describe('UserDatabase', () => {
 
