@@ -14,3 +14,11 @@ fetch('../Assets/footer.html')
         document.getElementById('footer').innerHTML = data;
     })
     .catch(error => console.error('Error loading footer:', error)); // Error handling
+
+function userCreation(event) {
+    event.preventDefault();
+
+    // our logic
+
+    console.log("Form submitted but prevented default behavior");
+}

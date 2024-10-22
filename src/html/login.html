@@ -13,9 +13,23 @@
         
         <!-- Main Content Section -->
         <div class="main-container">
+            <form name="login" id="login" onsubmit="userValidation()">
 
-
-
+                <h1>Login</h1>
+                
+                <!--Inputted Email-->
+                <input type="text" name="Email" id="email" placeholder="Email" required><br><br>
+                
+                <!--Inputted Password-->
+                <input type="text" name="Password" id="password" placeholder="Password" required><br><br>
+                
+                <!--Remember Me Checkbox-->
+                <!--Look into creating and storing a session token into local storage-->
+                <input type="checkbox" name="RememberMe" id="rememberMe">
+                <label for="rememberMe">Remember me</label><br><br>
+                <p>------------------------------------------------------------------------------   or   -----------------------------------------------------------------------------</p>
+                <h3>Continue with Google</h3>
+            </form>
         </div>
 
         <!-- Footer Section -->

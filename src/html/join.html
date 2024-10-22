@@ -10,11 +10,40 @@
     <body>
         <!-- Header Section -->
         <header id="header"></header>
-
         <!-- Main Content Section -->
         <div class="main-container">
 
+            <form name="sign-up" id="sign-up" onsubmit="userCreation()">
 
+                <h1>Create your account</h1>
+                
+                <!--Inputted Email-->
+                <input type="text" name="Email" id="email" placeholder="Email" required><br><br>
+                
+                <!--Inputted Password-->
+                <input type="text" name="Password" id="password" placeholder="Password" required><br><br>
+                
+                <!--First Name-->
+                <input type="text" name="firstName" id="firstName" placeholder="First Name" required><br><br>
+                
+                <!--Last Name-->
+                <input type="text" name="lastName" id="lastName" placeholder="Last Name" required><br><br>
+
+                <!--Age-->
+                <input type="text" name="Age" id="age" placeholder="Age" required><br><br>
+
+                <!--Height-->
+                <input type="text" name="Height" id="height" placeholder="Height" required><br><br>
+
+                <!--Weight-->
+                <input type="text" name="Weight" id="weight" placeholder="Weight" required><br><br>
+                
+                <!--Sign up button-->
+                <input type="submit" value="Sign up" class="submit-btn"><br><br>
+                <p>------------------------------------------------------------------------------   or   -----------------------------------------------------------------------------</p>
+                <h3>Continue with Google</h3>
+
+            </form>
             
         </div>
 

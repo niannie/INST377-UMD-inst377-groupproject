@@ -1,8 +1,15 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     background: #a0a0a0;
     font-family: Verdana;
     margin: 0;
     color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -47,10 +54,11 @@ p, h2 {
 }
 
 .main-container {
-    height: 50vh;
+    flex: 1; /* Allows main content to grow and take available space*/
     display: flex;
     flex-direction: column; 
     padding: 20px;
+    height: auto; /* adjusts to the content */
 }
 
 #footer {
@@ -58,7 +66,38 @@ p, h2 {
     padding: 10px;
     background-color: #5e5e5e; 
     color: white;
-    position: relative;
     bottom: 0; 
     width: 100%;
+}
+
+#sign-up {
+    text-align: center;
+    border: solid 1px white;
+}
+
+#sign-up input[type='text'] {
+    border-radius: 5px;
+}
+
+#sign-up input[type='text']:focus {
+    border-color: darkblue;
+    outline: none;
+}
+/*#email, #password, #firstName, #lastName, #age, #height, #weight*/
+
+.submit-btn {
+    background-color: navy;
+    color: white;
+    padding: 15px 65px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover{
+    background-color: darkblue;
+}
+
+#login {
+    text-align: center;
+    border: solid 1px white;
 }
