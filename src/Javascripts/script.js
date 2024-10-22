@@ -22,3 +22,8 @@ function userCreation(event) {
 
     console.log("Form submitted but prevented default behavior");
 }
+function userValidate(event){
+    event.preventDefault();
+
+    // our logic
+}
