@@ -22,7 +22,6 @@ function userCreation(event) {
 
     console.log("Form submitted but prevented default behavior");
 }
-<<<<<<< HEAD
 
 function fetchNutrition() {
     // Get the food item from the input box
@@ -53,10 +52,8 @@ function fetchNutrition() {
             console.error("Error:", error);
         });
 }
-=======
 function userValidate(event){
     event.preventDefault();
 
     // our logic
 }
->>>>>>> 3039d3d2e0e32ee418651c455f21a5b83f1677c8
