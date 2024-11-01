@@ -4,7 +4,9 @@ html, body {
 }
 
 body {
-    background: #a0a0a0;
+    background: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 128, 0.7));
+
     font-family: Verdana;
     margin: 0;
     color: white;
@@ -29,7 +31,7 @@ p, h2 {
     align-items: center;
     margin: 5px; 
     padding: 10px 50px;
-    background-color: #5e5e5e;
+    background-color: navy;
     color: white;
 }
 
@@ -61,35 +63,55 @@ p, h2 {
     height: auto; /* adjusts to the content */
 }
 
+.user-form{
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    height: auto;
+}
+
 #footer {
     text-align: center;
     padding: 10px;
-    background-color: #5e5e5e; 
+    background-color: navy; 
     color: white;
     bottom: 0; 
     width: 100%;
 }
 
-#sign-up {
+#sign-up, #login{
     text-align: center;
     border: solid 1px white;
+    width: 50%
 }
 
-#sign-up input[type='text'] {
+#sign-up input[type='text'],
+#login input[type='text'] {
+    text-align: left;
+    padding: 10px;
     border-radius: 5px;
+    box-sizing: border-box; /* makes sure padding doesn't effect txt field size*/
+    width: 40%;
+    
 }
 
-#sign-up input[type='text']:focus {
-    border-color: darkblue;
+#sign-up input[type='text']:focus,
+#login input[type='text']:focus {
+    border-color: navy;
     outline: none;
 }
-/*#email, #password, #firstName, #lastName, #age, #height, #weight*/
+
+#sign-up input::placeholder,
+#login input::placeholder {
+    text-align: left; /* Placeholder text aligned to the left */
+}
 
 .submit-btn {
     background-color: navy;
     color: white;
     padding: 15px 65px;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -97,7 +119,12 @@ p, h2 {
     background-color: darkblue;
 }
 
-#login {
-    text-align: center;
-    border: solid 1px white;
+#back-to-sign-up a,
+#back-to-sign-up u{
+    color: white;
+}
+
+#back-to-sign-up a:hover,
+#back-to-sign-up u:hover{
+    color: navy;
 }
