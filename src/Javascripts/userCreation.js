@@ -1,4 +1,5 @@
 class UserCreation {
+    //TODO: call this in script when creating a new user
     constructor(userID, email, password, firstName, lastName, age, height, weight) {
         this.userID = userID;   // Using the setter for userID
         this.email = email;     // Using the setter for email
