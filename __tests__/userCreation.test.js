@@ -1,5 +1,6 @@
 // __tests__/userCreation.test.js
-import UserCreation from '../src/Javascripts/userCreation.js';
+//FIXME: Might Delete Test Files
+const UserCreation = require('../public/src/js/userCreation.js');
 
 describe('UserCreation', () => {
     test('should create a user with the provided properties', () => {

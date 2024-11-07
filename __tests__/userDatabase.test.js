@@ -1,6 +1,7 @@
 // __tests__/userDatabase.test.js
-import UserCreation from '../src/Javascripts/userCreation.js';
-import UserDatabase from '../src/Javascripts/userDatabase.js';
+//FIXME: Might Delete Test Files
+const UserCreation = require('../public/src/js/userCreation.js');
+const UserDatabase = require('../public/src/js/userDatabase.js');
 
 describe('UserDatabase', () => {
 
