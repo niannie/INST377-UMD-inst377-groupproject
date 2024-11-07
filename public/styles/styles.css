@@ -63,6 +63,17 @@ p, h2 {
     height: auto; /* adjusts to the content */
 }
 
+.background-image {
+    background: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 128, 0.7)),
+        url('https://images.pexels.com/photos/1153369/pexels-photo-1153369.jpeg?cs=srgb&amp;dl=pexels-mastercowley-1153369.jpg&amp;fm=jpg'); /* Add the correct path to your image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+}
+
 .user-form{
     flex: 1;
     display: flex;
