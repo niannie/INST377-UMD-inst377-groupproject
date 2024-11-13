@@ -1,169 +1,219 @@
-html, body {
-    height: 100%;
-    margin: 0;
+html,
+body {
+  height: 100%;
+  margin: 0;
 }
 
 body {
-    background: 
-        linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 128, 0.7));
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 128, 0.7)
+  );
 
-    font-family: Verdana;
-    margin: 0;
-    color: white;
-    display: flex;
-    flex-direction: column;
+  font-family: Verdana;
+  margin: 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
 }
 
-p, h2 {
-    color: white;
-    line-height: 1.5;
+p,
+h2 {
+  color: white;
+  line-height: 1.5;
 }
 
 .header {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-    margin: 5px; 
-    padding: 10px 50px;
-    background-color: navy;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+  padding: 10px 50px;
+  background-color: navy;
+  color: white;
 }
 
 .title {
-    margin: 0;
-    font-size: 32px;
+  margin: 0;
+  font-size: 32px;
 }
 
 .navbar {
-    display: flex;
-    justify-content: flex-end;
-    gap: 70px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 70px;
 }
 
 .navbar_element:hover {
-    color: #cecece;
-    border: solid 1px white;
-    border-radius: 5px;
-    padding: 8px;
-    background-color: rgba(255, 255, 255, 0.1); 
-    transition: background-color 0.3s ease;
+  color: #cecece;
+  border: solid 1px white;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
 }
 
 .main-container {
-    flex: 1; /* Allows main content to grow and take available space*/
-    display: flex;
-    flex-direction: column; 
-    padding: 20px;
-    height: auto; /* adjusts to the content */
+  flex: 1; /* Allows main content to grow and take available space*/
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: auto; /* adjusts to the content */
 }
 
 .background-image {
-    background: 
-        linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 128, 0.7)),
-        url('https://images.pexels.com/photos/1153369/pexels-photo-1153369.jpeg?cs=srgb&amp;dl=pexels-mastercowley-1153369.jpg&amp;fm=jpg'); /* Add the correct path to your image */
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 40px;
-    border-radius: 8px;
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 128, 0.7)
+    ),
+    url("https://images.pexels.com/photos/1153369/pexels-photo-1153369.jpeg?cs=srgb&amp;dl=pexels-mastercowley-1153369.jpg&amp;fm=jpg"); /* Add the correct path to your image */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 40px;
+  border-radius: 8px;
 }
 
-.user-form{
-    flex: 1;
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    height: auto;
+.user-form {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  height: auto;
 }
 
 #footer {
-    text-align: center;
-    padding: 10px;
-    background-color: navy; 
-    color: white;
-    bottom: 0; 
-    width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: navy;
+  color: white;
+  bottom: 0;
+  width: 100%;
 }
 
-#sign-up, #login{
-    text-align: center;
-    border: solid 1px white;
-    width: 50%
+#sign-up,
+#login {
+  text-align: center;
+  border: solid 1px white;
+  width: 50%;
 }
 
-#sign-up input[type='text'],
-#login input[type='text'] {
-    text-align: left;
-    padding: 10px;
-    border-radius: 5px;
-    box-sizing: border-box; /* makes sure padding doesn't effect txt field size*/
-    width: 40%;
-    
+#sign-up input[type="text"],
+#login input[type="text"] {
+  text-align: left;
+  padding: 10px;
+  border-radius: 5px;
+  box-sizing: border-box; /* makes sure padding doesn't effect txt field size*/
+  width: 40%;
 }
 
-#sign-up input[type='text']:focus,
-#login input[type='text']:focus {
-    border-color: navy;
-    outline: none;
+#sign-up input[type="text"]:focus,
+#login input[type="text"]:focus {
+  border-color: navy;
+  outline: none;
 }
 
 #sign-up input::placeholder,
 #login input::placeholder {
-    text-align: left; /* Placeholder text aligned to the left */
+  text-align: left; /* Placeholder text aligned to the left */
 }
 
 .submit-btn {
-    background-color: navy;
-    color: white;
-    padding: 15px 65px;
-    border-radius: 10px;
-    cursor: pointer;
+  background-color: navy;
+  color: white;
+  padding: 15px 65px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-.submit-btn:hover{
-    background-color: darkblue;
+.submit-btn:hover {
+  background-color: darkblue;
 }
 
 #back-to-sign-up a,
-#back-to-sign-up u{
-    color: white;
+#back-to-sign-up u {
+  color: white;
 }
 
 #back-to-sign-up a:hover,
-#back-to-sign-up u:hover{
-    color: navy;
+#back-to-sign-up u:hover {
+  color: navy;
 }
-
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    color: white;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid white;
-    border-radius: 5px;
-    overflow: hidden;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-table th, table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+table th,
+table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 table th {
-    background-color: rgba(0, 0, 128, 0.8);
+  background-color: rgba(0, 0, 128, 0.8);
 }
 
 table tr:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    transition: background-color 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
 }
 
+.faq-section {
+  margin-top: 20px;
+}
+
+.faq-question {
+  background-color: rgba(0, 0, 128, 0.8);
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+
+.faq-question::after {
+  content: "\25BC";
+  font-size: 12px;
+  position: absolute;
+  right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+  transform: rotate(-180deg);
+}
+
+.faq-question:hover {
+  background-color: darkblue;
+}
+
+.faq-answer {
+  padding: 0 15px;
+  display: none;
+  overflow: hidden;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+}

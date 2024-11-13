@@ -13,12 +13,85 @@
         
         <!-- Main Content Section -->
         <div class="main-container">
+            <h2>Frequently Asked Questions</h2>
+            <section class="faq-section">
+                
+                <button class="faq-question">How do I log my daily meals?</button>
+                <div class="faq-answer">
+                    <p>To log a meal, navigate to the “Food Log” section and enter your meal details, including the type of food, quantity, and time of day.</p>
+                </div>
 
+                <button class="faq-question">Can I track my exercise routines on SnackTrack?</button>
+                <div class="faq-answer">
+                    <p>Yes, you can track exercises in the “Exercise Log” section, where you can input details such as exercise type, duration, and intensity.</p>
+                </div>
 
+                <button class="faq-question">What kind of data can I view on my profile?</button>
+                <div class="faq-answer">
+                    <p>Your profile includes summaries of your logged food, exercise routines, and any health metrics you've tracked, helping you monitor your overall progress.</p>
+                </div>
 
+                <button class="faq-question">Is there a way to track my weight and other health metrics?</button>
+                <div class="faq-answer">
+                    <p>Yes, you can log your weight, body measurements, and other health metrics in the "Health Metrics" section, which helps you visualize changes over time.</p>
+                </div>
+
+                <button class="faq-question">How do I edit or delete an entry?</button>
+                <div class="faq-answer">
+                    <p>To edit or delete a previous entry, go to the relevant log section, find the entry, and select “Edit” or “Delete” from the options menu.</p>
+                </div>
+
+                <button class="faq-question">Can I sync SnackTrack with other fitness apps or devices?</button>
+                <div class="faq-answer">
+                    <p>Currently, SnackTrack does not support syncing with external fitness apps or devices. However, we are working on integrating these features in future updates!</p>
+                </div>
+
+                <button class="faq-question">What should I do if I forget my password?</button>
+                <div class="faq-answer">
+                    <p>If you've forgotten your password, go to the login page and click “Forgot Password” to initiate the recovery process.</p>
+                </div>
+
+                <button class="faq-question">How do I change my account settings?</button>
+                <div class="faq-answer">
+                    <p>Go to your profile settings to update your personal information, change your password, and adjust privacy settings.</p>
+                </div>
+
+                <button class="faq-question">Is there a mobile app for SnackTrack?</button>
+                <div class="faq-answer">
+                    <p>Currently, SnackTrack is a web-based app, but we are planning a mobile version for iOS and Android. Stay tuned for updates!</p>
+                </div>
+
+                <button class="faq-question">How does SnackTrack protect my privacy and data?</button>
+                <div class="faq-answer">
+                    <p>SnackTrack is committed to data security and privacy. We follow industry best practices for data encryption and only collect necessary information to provide our service.</p>
+                </div>
+
+            </section>
         </div>
+
         
         <!-- Footer Section -->
         <footer id="footer"></footer>
+        <script>
+            //selects all FAQ questions
+            const faqQuestions = document.querySelectorAll(".faq-question");
+
+            faqQuestions.forEach(question => {
+                question.addEventListener("click", () => {
+                    //toggles active class for the clicked question
+                    question.classList.toggle("active");
+
+                    //gets the associated answer div
+                    const answer = question.nextElementSibling;
+                    
+                    //toggles the display of the answer
+                    if (answer.style.display === "block") {
+                        answer.style.display = "none";
+                    } else {
+                        answer.style.display = "block";
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
