@@ -1,12 +1,12 @@
 {
     "scripts": {
-        "start": "nodemon server.js",
-        "test": "jest"
+        "start": "firebase serve",
+        "deploy": "firebase deploy"
     },
     "name": "inst377-umd-inst377-groupproject",
     "version": "1.0.0",
     "description": "SnackTrack, a Fitness tracker",
-    "main": "server.js",
+    "main": "index.js",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/niannie/INST377-UMD-inst377-groupproject.git"
@@ -18,11 +18,9 @@
     },
     "homepage": "https://github.com/niannie/INST377-UMD-inst377-groupproject#readme",
     "devDependencies": {
-        "jest": "^29.7.0",
-        "nodemon": "^3.1.7"
+        "firebase-tools": "^13.25.0"
     },
     "dependencies": {
-        "firebase-admin": "^12.7.0",
-        "inst377-umd-inst377-groupproject": "file:"
+        "js-yaml": "^4.1.0"
     }
 }
