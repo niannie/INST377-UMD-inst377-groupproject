@@ -1,5 +1,5 @@
 // Load header and navigation buttons
-fetch('./Assets/header.html')
+fetch('/header.html')
     .then(response => response.text())
     .then(data => {
         // Insert the fetched header HTML into the header section
@@ -8,7 +8,7 @@ fetch('./Assets/header.html')
     .catch(error => console.error('Error loading header:', error)); // Error handling
 
 // Load footer
-fetch('./Assets/footer.html')
+fetch('/footer.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('footer').innerHTML = data;
