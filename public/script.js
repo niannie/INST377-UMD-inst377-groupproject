@@ -79,3 +79,9 @@ async function fetchNutrition() {
         console.error("Error:", error);
     }
 }
+
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById("mobileMenu");
+    mobileMenu.classList.toggle("active");
+}
+
