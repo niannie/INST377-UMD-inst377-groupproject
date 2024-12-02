@@ -222,7 +222,11 @@ table tr:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Mobile menu styles */
+.navbar_element {
+    padding: 10px;
+    text-align: center;
+}
+
 .hamburger-menu {
     display: none;
     font-size: 30px;
@@ -238,27 +242,22 @@ table tr:hover {
 
 #mobileMenu {
     display: none; 
-    flex-direction: column; 
+    flex-direction: column;
     gap: 10px;
     background-color: navy;
     padding: 10px;
 }
 
-.navbar_element {
-    padding: 10px;
-    text-align: center;
-}
-
-/* Media query to enable mobile styles */
 @media (max-width: 768px) {
     .hamburger-menu {
-        display: block; 
+        display: block;
     }
+  
     #desktopMenu {
-        display: none; 
+        display: none;
     }
+  
     #mobileMenu.active {
         display: flex;
     }
 }
-
