@@ -254,7 +254,7 @@ table tr:hover {
     .hamburger-menu {
         display: block; 
     }
-    .navbar {
+    #desktopMenu {
         display: none; 
     }
     #mobileMenu.active {
