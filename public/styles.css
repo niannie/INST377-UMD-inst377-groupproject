@@ -222,31 +222,43 @@ table tr:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Base styles for mobile devices */
-body {
-    font-size: 1rem;
+/* Mobile menu styles */
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 70px;
+}
+
+#mobileMenu {
+    display: none; 
+    flex-direction: column; 
+    gap: 10px;
+    background-color: navy;
     padding: 10px;
 }
 
-@media (min-width: 768px) {
-    body {
-        font-size: 1.2rem;
-        padding: 20px;
+.navbar_element {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Media query to enable mobile styles */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block; 
     }
-    .navbar{
-        align-items: center;
-        gap: 20px;
+    .navbar {
+        display: none; 
+    }
+    #mobileMenu.active {
+        display: flex;
     }
 }
 
-@media (min-width: 1024px) {
-    body {
-        font-size: 1.4rem;
-        padding: 30px;
-    }
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
