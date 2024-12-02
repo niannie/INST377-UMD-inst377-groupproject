@@ -217,3 +217,21 @@ table tr:hover {
   color: white;
   background-color: rgba(0, 0, 0, 0.7);
 }
+
+p {
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+@media (min-width: 600px) {
+    p {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 800px) {
+    p {
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+}
