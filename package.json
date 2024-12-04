@@ -1,9 +1,10 @@
 {
     "scripts": {
-        "start": "firebase serve",
+        "start": "webpack serve --mode development --open",
+        "build": "webpack --mode production",
         "deploy": "firebase deploy"
     },
-    "name": "inst377-umd-inst377-groupproject",
+    "name": "snacktrack",
     "version": "1.0.0",
     "description": "SnackTrack, a Fitness tracker",
     "main": "index.js",
@@ -18,9 +19,16 @@
     },
     "homepage": "https://github.com/niannie/INST377-UMD-inst377-groupproject#readme",
     "devDependencies": {
-        "firebase-tools": "^13.25.0"
+        "webpack": "^5.97.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^4.11.1",
+        "css-loader": "^6.7.0",
+        "html-webpack-plugin": "^5.5.0",
+        "style-loader": "^3.3.0",
+        "copy-webpack-plugin": "^11.0.0"
     },
     "dependencies": {
+        "firebase": "^11.0.2",
         "js-yaml": "^4.1.0"
     }
 }
