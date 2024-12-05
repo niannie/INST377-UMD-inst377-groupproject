@@ -1,4 +1,4 @@
-import './styles.css';
+import './styles.css'; // Importing styling
 
 // Load header and navigation buttons
 fetch('header.html')
@@ -87,11 +87,9 @@ function toggleMobileMenu() {
     mobileMenu.classList.toggle("active");
 }
 
-
-
 // Imports from Firebase
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -143,7 +141,6 @@ function userCreation(event) {
 
             // Confirm Success
             console.log("User created successfully:", user);
-
             alert("Account created! Welcome to SnackTrack.");
         })
         .catch((error) => {
@@ -151,3 +148,76 @@ function userCreation(event) {
             alert(error.message);
         });
 }
+
+function userLogin(event) {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    //Firebase login
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        // ...
+
+        // Confirm Success
+        console.log("User login successful:", user);
+        alert("Welcome back to SnackTrack.");
+    })
+    .catch((error) => {
+        console.error("Error with user login:", error.message);
+        alert(error.message);
+    });
+}
+
+function userSignout() {
+    signOut(auth).then(() => {
+        // Sign-out successful.
+        console.log("User signed out successfully");
+        alert("Hope to see you again soon!");
+      }).catch((error) => {
+        // An error happened.
+        console.error("Error signing out user", error.message)
+      });
+}
+
+window.onload = function() {
+    // Check if the page is the homepage
+    if (document.body.classList.contains("homepage")) {
+        // Attach event listener to search button
+        const searchButton = document.getElementById("searchButton");
+        if (searchButton) {
+            searchButton.addEventListener("click", fetchNutrition);
+        }
+
+        // Additional homepage-specific logic can go here
+        // e.g., mobile menu toggle setup
+    }
+
+    // Check if the page is the join page
+    if (document.body.classList.contains("join-page")) {
+        const signupForm = document.getElementById("sign-up");
+        if (signupForm) {
+            signupForm.addEventListener("submit", userCreation);
+        }
+    }
+
+    // Check if the page is the login page
+    if (document.body.classList.contains("login-page")) {
+        const loginForm = document.getElementById("login");
+        if (loginForm) {
+            loginForm.addEventListener("submit", userLogin);
+        }
+    }
+
+    /*// Check if the page is the userProfile page
+    if (document.body.classList.contains("userProfile-page")) {
+        // Add logic for sign-out or profile actions
+        const signoutButton = document.getElementById("signoutButton");
+        if (signoutButton) {
+            signoutButton.addEventListener("click", userSignout);
+        }
+    }*/
+};

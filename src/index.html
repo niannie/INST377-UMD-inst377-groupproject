@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | SnackTrack</title>
   </head>
-  <body>
+  <body class="homepage">
     <!-- Header Section -->
     <header id="header"></header>
 
@@ -23,9 +23,9 @@
       <section>
         <h1>Nutrition Facts Search</h1>
         <input type="text" id="foodInput" placeholder="Enter a food item" required />
-        <button onclick="fetchNutrition()">Get Nutrition Info</button>
+        <button id="searchButton">Get Nutrition Info</button>
 
-        <h2>Nutrition Information:</h2>
+      <!--<h2>Nutrition Information:</h2>-->
         <table id="nutritionInfo"></table>
       </section>
     </main>
