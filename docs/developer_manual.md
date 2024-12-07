@@ -22,10 +22,8 @@ No tests have been implemented yet.
 
 ## Known Bugs and Future Development Roadmap
 ### Known Bugs
-- Responsive design issues on smaller screens.
-- Occasional API failures for invalid inputs.
-
+- Possible responsive design issues on larger screens.
+  
 ### Future Development
 - Add user authentication for better security.
 - Implement charts for tracking progress.
-- Improve mobile navigation.
