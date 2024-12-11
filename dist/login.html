@@ -1,1 +1,41 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Login | SnackTrack</title><script defer="defer" src="bundle.js"></script></head><body class="login-page"><header id="header"></header><div class="user-form"><form name="login" id="login"><h1>Welcome Back!</h1><p>Please enter login details below</p><input name="Email" id="email" placeholder="Email" required><br><br><input type="password" name="Password" id="password" placeholder="Password" required><br><br><input type="checkbox" name="RememberMe" id="rememberMe"> <label for="rememberMe">Remember me</label><br><br><input type="submit" value="Login" class="submit-btn"><br><br><p id="back-to-sign-up">Don't have an account?<b><u><a href="join.html">Sign up</a></u></b></p></form></div><footer id="footer"></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login | SnackTrack</title>
+    </head>
+    <body class="login-page">
+        <!-- Header Section -->
+        <header id="header"></header>
+
+        <div class = "main-container login-background-image">
+            <!-- Main Content Section -->
+            <div class="user-form">
+                <form name="login" id="login">
+
+                    <h1>Welcome Back!</h1>
+                    <p>Please enter login details below</p>
+                    
+                    <!--Inputted Email-->
+                    <input type="text" name="Email" id="email" placeholder="Email" required><br><br>
+                    
+                    <!--Inputted Password-->
+                    <input type="password" name="Password" id="password" placeholder="Password" required><br><br>
+
+                    <!--Remember Me Checkbox-->
+                    <!--Look into creating and storing a session token into local storage-->
+                    <input type="checkbox" name="RememberMe" id="rememberMe">
+                    <label for="rememberMe">Remember me</label><br><br>
+                    
+                    <!--Sign up button-->
+                    <input type="submit" value="Login" class="submit-btn"><br><br>
+                    <p id="back-to-sign-up">Don't have an account?<b><u><a href="join.html">Sign up</a></u></b></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer id="footer"></footer>
+    </body>
+</html>

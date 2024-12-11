@@ -65,11 +65,11 @@ header {
 }
 
 .main-container {
-  flex: 1; /* Allows main content to grow and take available space*/
+  flex: 1;
   display: flex;
   flex-direction: column;
   padding: 20px;
-  height: auto; /* adjusts to the content */
+  height: auto;
 }
 
 .background-image {
@@ -99,6 +99,35 @@ header {
   padding: 40px;
   border-radius: 8px;
 }
+
+.join-background-image {
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 128, 0.7)
+    ),
+    url("https://images.pexels.com/photos/1000445/pexels-photo-1000445.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.login-background-image {
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 128, 0.7)
+    ),
+    url("https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 40px;
+  border-radius: 8px;
+}
+
 
 .user-form {
   flex: 1;
@@ -284,7 +313,7 @@ table tr:hover {
 #footer {
   background: linear-gradient(to right, rgba(0, 0, 128, 0.8), rgba(0, 0, 64, 0.8));
   color: white;
-  padding: 15px;
+  padding: 5px;
   font-size: 13px;
 }
 
