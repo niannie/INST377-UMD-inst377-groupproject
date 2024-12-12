@@ -89,8 +89,8 @@ function toggleMobileMenu() {
 
 // Imports from Firebase
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
-import { getFirestore, doc, setDoc } from 'firebase/firestore';
+import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBfsevWRhWLFsyRy-5WknOBPWGlkZMo0Lo",
@@ -160,10 +160,9 @@ function userLogin(event) {
     .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        // ...
-
         // Confirm Success
         console.log("User login successful:", user);
+        window.location.href = "/userProfile.html";  // Redirect to profile page
         alert("Welcome back to SnackTrack.");
     })
     .catch((error) => {
@@ -177,6 +176,7 @@ function userSignout() {
         // Sign-out successful.
         console.log("User signed out successfully");
         alert("Hope to see you again soon!");
+        window.location.href = "/index.html";  // Redirect after sign out
       }).catch((error) => {
         // An error happened.
         console.error("Error signing out user", error.message)
@@ -210,44 +210,55 @@ window.onload = function () {
 
     // Check if the page is the user profile page
     if (document.body.classList.contains("userProfile-page")) {
-        loadUserProfile();
-    }
+        // Listen to the user's authentication state
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is logged in, load the user profile
+                console.log("User is logged in:", user);
+                loadUserProfile(user);  // Pass the user object to load the profile
+            } else {
+                // No user is logged in
+                console.log("No user logged in.");
+                window.location.href = "/index.html";  // Redirect to login if not logged in
+            }
+        });
 
-    /*// Check if the page is the userProfile page
-    if (document.body.classList.contains("userProfile-page")) {
-        // Add logic for sign-out or profile actions
-        const signoutButton = document.getElementById("signoutButton");
-        if (signoutButton) {
-            signoutButton.addEventListener("click", userSignout);
+        const signOutButton = document.getElementById("signoutButton");
+        if (signOutButton) {
+            signOutButton.addEventListener("click", userSignout)
         }
-    }*/
 };
 
-function loadUserProfile() {
-    const user = auth.currentUser;
+// Function to load user profile
+function loadUserProfile(user) {
+    // Ensure user is defined before attempting to access properties
+    if (!user) {
+        console.error("No user data available for profile.");
+        return; // Exit if there's no user
+    }
 
-    if (user) {
-        const userDocRef = doc(db, "users", user.uid);
-        getDoc(userDocRef)
-            .then((docSnap) => {
-                if (docSnap.exists()) {
-                    const userData = docSnap.data();
+    const userDocRef = doc(db, "users", user.uid);
+    console.log("Fetching user document:", userDocRef.path);
+    getDoc(userDocRef)
+        .then((docSnap) => {
+        if (docSnap.exists()) {
+            const userData = docSnap.data();
+            console.log("User data:", userData); // Log the data for inspection
 
-                    document.getElementById("userName").textContent = `${userData.firstName}`;
-                    document.getElementById("userFullName").textContent = `${userData.firstName} ${userData.lastName}`;
-                    document.getElementById("userEmail").textContent = user.email;
-                    document.getElementById("userAge").textContent = userData.age || "No data";
-                    document.getElementById("userHeight").textContent = userData.height || "No data";
-                    document.getElementById("userWeight").textContent = userData.weight || "No data";
-                } else {
-                    alert("Error fetching user details.");
-                }
-            })
-            .catch((error) => {
-                console.error("Error fetching user document:", error.message);
-            });
-    } else {
-        alert("Please log in to view your profile.");
-        window.location.href = "login.html";
+            document.getElementById("userName").textContent = `${userData.firstName}`;
+            document.getElementById("userFullName").textContent = `${userData.firstName} ${userData.lastName}`;
+            document.getElementById("userEmail").textContent = user.email;
+            document.getElementById("userAge").textContent = userData.age || "No data";
+            document.getElementById("userHeight").textContent = userData.height || "No data";
+            document.getElementById("userWeight").textContent = userData.weight || "No data";
+        } else {
+            console.error("No such document!");
+            alert("Error fetching user details.");
+        }
+        })
+        .catch((error) => {
+        console.error("Error fetching user document:", error.message);
+        });
     }
 }
