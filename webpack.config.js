@@ -53,6 +53,10 @@ module.exports = {
             template: './src/404.html', 
             filename: '404.html', // The name of the output file
         }),
+        new HtmlWebpackPlugin({
+            template: './src/userProfile.html', 
+            filename: 'userProfile.html', // The name of the output file
+        }),
         // Copy header and footer HTML files to dist folder
         new CopyWebpackPlugin({
             patterns: [
