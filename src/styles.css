@@ -446,7 +446,7 @@ table tr:hover {
   padding: 30px;
   border-radius: 8px;
   width: 100%;
-  max-width: 800px; /* Adjust the maximum width for your preference */
+  max-width: 800px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
@@ -466,7 +466,7 @@ table tr:hover {
 }
 
 .user-details strong {
-  color: #36A9AE; /* Matches the button color */
+  color: #36A9AE;
 }
 
 .actions {
