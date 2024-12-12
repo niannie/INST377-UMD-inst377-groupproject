@@ -183,17 +183,13 @@ function userSignout() {
       });
 }
 
-window.onload = function() {
+window.onload = function () {
     // Check if the page is the homepage
     if (document.body.classList.contains("homepage")) {
-        // Attach event listener to search button
         const searchButton = document.getElementById("searchButton");
         if (searchButton) {
             searchButton.addEventListener("click", fetchNutrition);
         }
-
-        // Additional homepage-specific logic can go here
-        // e.g., mobile menu toggle setup
     }
 
     // Check if the page is the join page
@@ -212,6 +208,11 @@ window.onload = function() {
         }
     }
 
+    // Check if the page is the user profile page
+    if (document.body.classList.contains("userProfile-page")) {
+        loadUserProfile();
+    }
+
     /*// Check if the page is the userProfile page
     if (document.body.classList.contains("userProfile-page")) {
         // Add logic for sign-out or profile actions
@@ -221,3 +222,37 @@ window.onload = function() {
         }
     }*/
 };
+
+// Load user profile details
+function loadUserProfile() {
+    const user = auth.currentUser;
+
+    if (user) {
+        // Fetch user data from Firestore
+        const userDocRef = doc(db, "users", user.uid);
+        getDoc(userDocRef)
+            .then((docSnap) => {
+                if (docSnap.exists()) {
+                    const userData = docSnap.data();
+
+                    // Populate user details
+                    document.getElementById("userName").textContent = `${userData.firstName}`;
+                    document.getElementById("userFullName").textContent = `${userData.firstName} ${userData.lastName}`;
+                    document.getElementById("userEmail").textContent = user.email;
+                    document.getElementById("userAge").textContent = userData.age || "No data";
+                    document.getElementById("userHeight").textContent = userData.height || "No data";
+                    document.getElementById("userWeight").textContent = userData.weight || "No data";
+                } else {
+                    console.error("No such user document!");
+                    alert("Error fetching user details.");
+                }
+            })
+            .catch((error) => {
+                console.error("Error fetching user document:", error.message);
+            });
+    } else {
+        console.error("No user is logged in.");
+        alert("Please log in to view your profile.");
+        window.location.href = "login.html"; // Redirect to login page if not logged in
+    }
+}
