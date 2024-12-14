@@ -56,12 +56,12 @@
 
                 <button class="faq-question">Is there a mobile app for SnackTrack?</button>
                 <div class="faq-answer">
-                    <p>Currently, SnackTrack is a web-based app, but we are planning a mobile version for iOS and Android. Stay tuned for updates!</p>
+                    <p>Currently, SnackTrack is a web-based app, but we are planning a mobile version for iOS and Android. Please stay tuned for updates!</p>
                 </div>
 
                 <button class="faq-question">How does SnackTrack protect my privacy and data?</button>
                 <div class="faq-answer">
-                    <p>SnackTrack is committed to data security and privacy. We follow industry best practices for data encryption and only collect necessary information to provide our service.</p>
+                    <p>SnackTrack is committed to data security and privacy. We follow industry best practices for data encryption and only collect necessary information to provide our service. For more information, please visit our Privacy Policy and Terms of Service.</p>
                 </div>
 
             </section>
@@ -71,18 +71,14 @@
         <!-- Footer Section -->
         <footer id="footer"></footer>
         <script>
-            //selects all FAQ questions
             const faqQuestions = document.querySelectorAll(".faq-question");
 
             faqQuestions.forEach(question => {
                 question.addEventListener("click", () => {
-                    //toggles active class for the clicked question
                     question.classList.toggle("active");
 
-                    //gets the associated answer div
                     const answer = question.nextElementSibling;
                     
-                    //toggles the display of the answer
                     if (answer.style.display === "block") {
                         answer.style.display = "none";
                     } else {
