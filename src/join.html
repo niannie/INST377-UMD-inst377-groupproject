@@ -4,6 +4,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Join | SnackTrack</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            .chart-container {
+                width: 80%;
+                max-width: 800px;
+                margin: 20px auto;
+                padding: 20px;
+                background: rgba(238, 232, 232, 0.8);
+                border-radius: 10px;
+                box-shadow: 0 4px 6px black;
+            }
+        </style>
     </head>
     <body class="join-page">
         <!-- Header Section -->
@@ -42,9 +54,45 @@
                     <input type="submit" value="Sign up" class="submit-btn"><br><br>
                 </form>
             </div>
+            <div class="chart-container">
+                <canvas id="userCountChart"></canvas>
+            </div>
+
         </div>
 
         <!-- Footer Section -->
         <footer id="footer"></footer>
+
+        <script>
+            const ctx = document.getElementById('userCountChart')
+            const months = {
+                labels: ["August", "September", "October", "November", "December"],
+                datasets: [{
+                    label: "User Count Since August",
+                    weight: "bold",
+                    data: [100, 264, 340, 578, 767],
+                    borderColor: "blue",
+                    backgroundColor: "lightblue",
+                    borderWidth: 2
+                }]
+            };
+            new Chart(ctx, {
+                type: "line",
+                data: months,
+                options: {
+                    plugins: {
+                        legend: {
+                            labels: {
+                                font: {
+                                    size: 16,
+                                    weight: "bold",
+                                    color: "black"
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
     </body>
 </html>
