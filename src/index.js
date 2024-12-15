@@ -87,28 +87,25 @@ function toggleMobileMenu() {
     mobileMenu.classList.toggle("active");
 }
 
-// Imports from Firebase
+// Import Firebase modules globally
 import { initializeApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
+// Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBfsevWRhWLFsyRy-5WknOBPWGlkZMo0Lo",
-  authDomain: "snack-track-7f768.firebaseapp.com",
-  projectId: "snack-track-7f768",
-  storageBucket: "snack-track-7f768.firebasestorage.app",
-  messagingSenderId: "560371500579",
-  appId: "1:560371500579:web:36697c5426813161505396",
-  measurementId: "G-WG25VD42FH"
+    apiKey: "AIzaSyBjffc4HUjtmPLMNs3ZzacNrQZ4Sy_UsLc",
+    authDomain: "inst377-final-project-f3de6.firebaseapp.com",
+    projectId: "inst377-final-project-f3de6",
+    storageBucket: "inst377-final-project-f3de6.firebasestorage.app",
+    messagingSenderId: "606452978860",
+    appId: "1:606452978860:web:3215f12b8d554c751fbb09",
+    measurementId: "G-RGBB5HX6RM",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Initialize Firebase Authentication
 const auth = getAuth();
-
-// Initialize Firestore Database
 const db = getFirestore();
 
 // Handle User Sign-Up
@@ -183,70 +180,6 @@ function userSignout() {
       });
 }
 
-window.onload = function () {
-    // Check if the page is the homepage
-    if (document.body.classList.contains("homepage")) {
-        const searchButton = document.getElementById("searchButton");
-        if (searchButton) {
-            searchButton.addEventListener("click", fetchNutrition);
-        }
-    }
-
-    // Check if the page is the join page
-    if (document.body.classList.contains("join-page")) {
-        const signupForm = document.getElementById("sign-up");
-        const script = document.createElement('script');
-        if (signupForm) {
-            signupForm.addEventListener("submit", userCreation);
-        }
-        
-        script.src = "https://cdn.jsdelivr.net/npm/chart.js";
-        script.onload = initializeChart;
-        document.body.appendChild(script);
-    }
-
-    // Check if the page is the login page
-    if (document.body.classList.contains("login-page")) {
-        const loginForm = document.getElementById("login");
-        if (loginForm) {
-            loginForm.addEventListener("submit", userLogin);
-        }
-    }
-
-    // Check if the page is the user profile page
-    if (document.body.classList.contains("userProfile-page")) {
-        // Listen to the user's authentication state
-        const auth = getAuth();
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // User is logged in, load the user profile
-                console.log("User is logged in:", user);
-                loadUserProfile(user);  // Pass the user object to load the profile
-            } else {
-                // No user is logged in
-                console.log("No user logged in.");
-                window.location.href = "/index.html";  // Redirect to login if not logged in
-            }
-        });
-
-        const signOutButton = document.getElementById("signoutButton");
-        if (signOutButton) {
-            signOutButton.addEventListener("click", userSignout)
-        }
-    // Check if the page is the About page
-    if (document.body.classList.contains('about-page')) {
-        console.log("about page loaded")
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/simple-slider/1.0.0/simpleslider.min.js';
-        script.onload = initializeSlider;
-        document.body.appendChild(script);
-    }
-    // Check if the page is the Help page
-    if (document.body.classList.contains("help-page")) {
-        console.log('Help page detected');
-        initializeFAQToggle();
-    }
-};
 
 // Function to load user profile
 function loadUserProfile(user) {
@@ -278,25 +211,6 @@ function loadUserProfile(user) {
         .catch((error) => {
         console.error("Error fetching user document:", error.message);
         });
-    }
-}
-
-// Function for about page
-function initializeSlider() {
-    const sliderContainer = document.getElementById('myslider');
-
-    if (!sliderContainer) {
-        console.error('Slider container not found!');
-        return;
-    }
-    /** maybe remove the .getslider*/
-    simpleslider.getSlider({
-        container: sliderContainer,
-        transitionTime: 1000, // Transition duration in seconds
-        delay: 3500,       // Delay between slides in seconds
-        autoplay: true,       // Ensures the slider loops
-    });
-    console.log('Slider initialized successfully.');
 }
 
 // Function for faq page
@@ -348,3 +262,92 @@ function initializeChart() {
                 }
             });
 }
+
+async function initializeSlider() {
+    try {
+        const { tns } = await import("tiny-slider");
+
+        const slider = tns({
+            container: '.my-slider',
+            items: 1, // Show 1 image at a time
+            slideBy: 'page',
+            autoplay: true, // Enable autoplay
+            autoplayTimeout: 3000, // Set the delay for the autoplay
+            autoplayHoverPause: false, // Disable pause on hover
+            controls: false, // Remove navigation controls
+            nav: false, // Remove navigation dots
+            loop: true, // Enable infinite loop
+            speed: 400, // Set transition speed
+        });
+    } catch (error) {
+        console.error("Error loading tiny-slider:", error);
+    }
+}
+
+window.onload = async function () {
+    // Check if the page is the homepage
+    if (document.body.classList.contains("homepage")) {
+        const searchButton = document.getElementById("searchButton");
+        if (searchButton) {
+            searchButton.addEventListener("click", fetchNutrition);
+        }
+    }
+
+    // Check if the page is the join page
+    if (document.body.classList.contains("join-page")) {
+        const signupForm = document.getElementById("sign-up");
+        const script = document.createElement('script');
+        if (signupForm) {
+            signupForm.addEventListener("submit", userCreation);
+        }
+        
+        script.src = "https://cdn.jsdelivr.net/npm/chart.js";
+        script.onload = initializeChart;
+        document.body.appendChild(script);
+    }
+
+    // Check if the page is the login page
+    if (document.body.classList.contains("login-page")) {
+        const loginForm = document.getElementById("login");
+        if (loginForm) {
+            loginForm.addEventListener("submit", userLogin);
+        }
+    }
+
+    // Check if the page is the user profile page
+    if (document.body.classList.contains("userProfile-page")) {
+        // Listen to the user's authentication state
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is logged in, load the user profile
+                console.log("User is logged in:", user);
+                loadUserProfile(user);  // Pass the user object to load the profile
+            } else {
+                // No user is logged in
+                console.log("No user logged in.");
+                window.location.href = "/index.html";  // Redirect to login if not logged in
+            }
+        });
+
+        const signOutButton = document.getElementById("signoutButton");
+        if (signOutButton) {
+            signOutButton.addEventListener("click", userSignout)
+        }
+    }
+
+    // Check if the page is the About page
+    if (document.body.classList.contains('about-page')) {
+        try {
+            await initializeSlider();
+        } catch (error) {
+            console.error("Error loading tiny-slider:", error);
+        }
+    }
+
+    // Check if the page is the Help page
+    if (document.body.classList.contains("help-page")) {
+        console.log('Help page detected');
+        initializeFAQToggle();
+    }
+};

@@ -28,8 +28,9 @@
         "webpack-dev-server": "^4.11.1"
     },
     "dependencies": {
-        "firebase": "^11.0.2",
+        "firebase": "^11.1.0",
         "js-yaml": "^4.1.0",
-        "simple-slider": "^1.0.0"
+        "snacktrack": "file:",
+        "tiny-slider": "^2.9.4"
     }
 }
