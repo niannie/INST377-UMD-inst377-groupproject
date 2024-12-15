@@ -93,14 +93,14 @@ import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWith
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBfsevWRhWLFsyRy-5WknOBPWGlkZMo0Lo",
-  authDomain: "snack-track-7f768.firebaseapp.com",
-  projectId: "snack-track-7f768",
-  storageBucket: "snack-track-7f768.firebasestorage.app",
-  messagingSenderId: "560371500579",
-  appId: "1:560371500579:web:36697c5426813161505396",
-  measurementId: "G-WG25VD42FH"
-};
+    apiKey: "AIzaSyBjffc4HUjtmPLMNs3ZzacNrQZ4Sy_UsLc",
+    authDomain: "inst377-final-project-f3de6.firebaseapp.com",
+    projectId: "inst377-final-project-f3de6",
+    storageBucket: "inst377-final-project-f3de6.firebasestorage.app",
+    messagingSenderId: "606452978860",
+    appId: "1:606452978860:web:3215f12b8d554c751fbb09",
+    measurementId: "G-RGBB5HX6RM"
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

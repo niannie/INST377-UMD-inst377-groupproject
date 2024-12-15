@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "snack-track-7f768"
-  }
+    "default": "inst377-final-project-f3de6",
+    "staging": "inst377-final-project-f3de6"
+  },
+  "targets": {},
+  "etags": {}
 }
