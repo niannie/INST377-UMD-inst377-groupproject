@@ -27,35 +27,57 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html', // Your HTML template
             filename: 'index.html', // The name of the output file
+            scriptLoading: 'defer',  // Add this to defer the script loading
         }),
         // HTML template for the join page
         new HtmlWebpackPlugin({
-            template: './src/join.html', // Add your join page as another HTML template
-            filename: 'join.html', // The name of the output file
+            template: './src/join.html',
+            filename: 'join.html',
+            scriptLoading: 'defer',  // Add this to defer the script loading
         }),
         // HTML template for the about page
         new HtmlWebpackPlugin({
             template: './src/about.html',
-            filename: 'about.html', // The name of the output file
+            filename: 'about.html', 
+            inject: 'body', 
+            scriptLoading: 'defer',  // Ensure script is deferred
         }),
         // HTML template for the help page
         new HtmlWebpackPlugin({
             template: './src/help.html',
-            filename: 'help.html', // The name of the output file
+            filename: 'help.html', 
+            inject: 'body', 
+            scriptLoading: 'defer',  // Ensure script is deferred
         }),
         // HTML template for the login page
         new HtmlWebpackPlugin({
             template: './src/login.html',
-            filename: 'login.html', // The name of the output file
+            filename: 'login.html', 
+            scriptLoading: 'defer',  // Add this to defer the script loading
         }),
         // HTML template for the 404 page
         new HtmlWebpackPlugin({
             template: './src/404.html', 
-            filename: '404.html', // The name of the output file
+            filename: '404.html', 
+            scriptLoading: 'defer',  // Add this to defer the script loading
         }),
+        // HTML template for user profile page
         new HtmlWebpackPlugin({
             template: './src/userProfile.html', 
-            filename: 'userProfile.html', // The name of the output file
+            filename: 'userProfile.html', 
+            scriptLoading: 'defer',  // Add this to defer the script loading
+        }),
+        // HTML template for terms page
+        new HtmlWebpackPlugin({
+            template: './src/terms.html',
+            filename: 'terms.html', 
+            scriptLoading: 'defer',  // Add this to defer the script loading
+        }),
+        // HTML template for privacy page
+        new HtmlWebpackPlugin({
+            template: './src/privacy.html', 
+            filename: 'privacy.html', 
+            scriptLoading: 'defer',  // Add this to defer the script loading
         }),
         // Copy header and footer HTML files to dist folder
         new CopyWebpackPlugin({
@@ -70,5 +92,5 @@ module.exports = {
         static: path.resolve(__dirname, 'dist'),  // Serve files from the 'dist' folder
         open: true, // Automatically open the browser
         port: 8000, // Specify the port (you can change it)
-    },    
-};
+    },
+}; 

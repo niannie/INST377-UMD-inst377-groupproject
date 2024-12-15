@@ -67,25 +67,7 @@
             </section>
         </div>
 
-        
         <!-- Footer Section -->
         <footer id="footer"></footer>
-        <script>
-            const faqQuestions = document.querySelectorAll(".faq-question");
-
-            faqQuestions.forEach(question => {
-                question.addEventListener("click", () => {
-                    question.classList.toggle("active");
-
-                    const answer = question.nextElementSibling;
-                    
-                    if (answer.style.display === "block") {
-                        answer.style.display = "none";
-                    } else {
-                        answer.style.display = "block";
-                    }
-                });
-            });
-        </script>
     </body>
 </html>

@@ -236,7 +236,6 @@ table tr:hover {
   transition: background-color 0.3s ease;
 }
 
-
 .faq-question::after {
   content: "\25BC";
   font-size: 12px;
@@ -254,11 +253,17 @@ table tr:hover {
 }
 
 .faq-answer {
+  max-height: 0; /* Start collapsed */
   padding: 0 15px;
-  display: none;
   overflow: hidden;
   color: white;
   background-color: rgba(0, 0, 0, 0.7);
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer.visible {
+  max-height: 500px; /* Increase max-height */
+  padding: 15px; /* Add padding when expanded */
 }
 
 .navbar_element {
@@ -503,4 +508,46 @@ table tr:hover {
 .button-25:active {
   background-color: #2A8387;
   box-shadow: rgba(0, 0, 0, 0.15) 0 2px 4px inset, rgba(0, 0, 0, 0.4) 0 1px 1px;
+}
+
+
+/*New styling*/
+.slider-container {
+  width: 640px;
+  height: 640px;
+  margin: 20px auto;
+  overflow: hidden; /* Ensure images do not overflow */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#myslider {
+  width: 612px;
+  height: 612px;
+  position: relative; /* Stack images properly */
+}
+
+#myslider img {
+  position: absolute; /* Ensure images overlap */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out; /* Smooth transition */
+  opacity: 0; /* Initially hide images */
+}
+
+#myslider img.active {
+  opacity: 1; /* Show active image */
+}
+
+
+.chart-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(238, 232, 232, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px black;
 }

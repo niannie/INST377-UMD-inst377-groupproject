@@ -195,9 +195,14 @@ window.onload = function () {
     // Check if the page is the join page
     if (document.body.classList.contains("join-page")) {
         const signupForm = document.getElementById("sign-up");
+        const script = document.createElement('script');
         if (signupForm) {
             signupForm.addEventListener("submit", userCreation);
         }
+        
+        script.src = "https://cdn.jsdelivr.net/npm/chart.js";
+        script.onload = initializeChart;
+        document.body.appendChild(script);
     }
 
     // Check if the page is the login page
@@ -228,6 +233,19 @@ window.onload = function () {
         if (signOutButton) {
             signOutButton.addEventListener("click", userSignout)
         }
+    // Check if the page is the About page
+    if (document.body.classList.contains('about-page')) {
+        console.log("about page loaded")
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/simple-slider/1.0.0/simpleslider.min.js';
+        script.onload = initializeSlider;
+        document.body.appendChild(script);
+    }
+    // Check if the page is the Help page
+    if (document.body.classList.contains("help-page")) {
+        console.log('Help page detected');
+        initializeFAQToggle();
+    }
 };
 
 // Function to load user profile
@@ -261,4 +279,72 @@ function loadUserProfile(user) {
         console.error("Error fetching user document:", error.message);
         });
     }
+}
+
+// Function for about page
+function initializeSlider() {
+    const sliderContainer = document.getElementById('myslider');
+
+    if (!sliderContainer) {
+        console.error('Slider container not found!');
+        return;
+    }
+    /** maybe remove the .getslider*/
+    simpleslider.getSlider({
+        container: sliderContainer,
+        transitionTime: 1000, // Transition duration in seconds
+        delay: 3500,       // Delay between slides in seconds
+        autoplay: true,       // Ensures the slider loops
+    });
+    console.log('Slider initialized successfully.');
+}
+
+// Function for faq page
+function initializeFAQToggle() {
+    console.log('FAQ Toggle Initialized');
+    const faqQuestions = document.querySelectorAll(".faq-question");
+
+    faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+            question.classList.toggle("active");
+
+            const answer = question.nextElementSibling;
+
+            // Toggle visibility using the class
+            answer.classList.toggle("visible");
+        });
+    });
+}
+
+// Function for join page
+function initializeChart() {
+    const ctx = document.getElementById('userCountChart')
+            const months = {
+                labels: ["August", "September", "October", "November", "December"],
+                datasets: [{
+                    label: "User Count Since August",
+                    weight: "bold",
+                    data: [100, 264, 340, 578, 767],
+                    borderColor: "blue",
+                    backgroundColor: "lightblue",
+                    borderWidth: 2
+                }]
+            };
+            new Chart(ctx, {
+                type: "line",
+                data: months,
+                options: {
+                    plugins: {
+                        legend: {
+                            labels: {
+                                font: {
+                                    size: 16,
+                                    weight: "bold",
+                                    color: "black"
+                                }
+                            }
+                        }
+                    }
+                }
+            });
 }
