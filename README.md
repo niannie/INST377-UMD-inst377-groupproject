@@ -1,4 +1,4 @@
-# INST377 - [SnackTrack](https://snack-track-7f768.web.app/)
+# INST377 - [SnackTrack](https://inst377-final-project-f3de6.web.app/)
 # Names: Annie Ni, Melvin Quintanilla, Jasmine Emeruwa, Javier Oyola
 Description of the Project:
 SnackTrack is a user-friendly platform designed to help individuals monitor their fitness journey by logging food, exercise, and overall health metrics. Users can create an account to personalize their experience, search for nutritional information using an external API, and track their progress over time. The interface is visually appealing, organized, and responsive to various screen sizes, ensuring accessibility on mobile devices, tablets, and desktops. Additional features include dynamic header and footer components, a collapsible FAQ section, and data tables for enhanced functionality.
