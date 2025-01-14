@@ -18,7 +18,7 @@
                     <p>To get started fill in the details below</p>
                     
                     <!--Inputted Email-->
-                    <input type="text" name="Email" id="email" placeholder="Email" required><br><br>
+                    <input type="email" name="Email" id="email" placeholder="Email" required><br><br>
                     
                     <!--Inputted Password-->
                     <input type="password" name="Password" id="password" placeholder="Password" required><br><br>
@@ -30,16 +30,21 @@
                     <input type="text" name="lastName" id="lastName" placeholder="Last Name" required><br><br>
 
                     <!--Age-->
-                    <input type="text" name="Age" id="age" placeholder="Age" required><br><br>
+                    <input type="number" name="Age" id="age" placeholder="Age" min="13" required><br><br>
 
                     <!--Height-->
-                    <input type="text" name="Height" id="height" placeholder="Height" required><br><br>
+                    <input type="number" name="Height" id="height" placeholder="Height (cm)" min="0" required><br><br>
 
                     <!--Weight-->
-                    <input type="text" name="Weight" id="weight" placeholder="Weight" required><br><br>
+                    <input type="number" name="Weight" id="weight" placeholder="Weight (kg)" min="0" required><br><br>
                     
                     <!--Sign up button-->
                     <input type="submit" value="Sign up" class="submit-btn"><br><br>
+                    <p>
+                        We use Firebase Authentication to securely create your account. By signing up, you agree to our 
+                        <b><u><a href="/privacy.html" target="_blank">Privacy Policy</a></u></b> and 
+                        <b><u><a href="/terms.html" target="_blank">Terms of Service</a></u></b>
+                    </p>
                 </form>
             </div>
             <div class="chart-container">

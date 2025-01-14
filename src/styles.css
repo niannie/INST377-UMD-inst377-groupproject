@@ -128,7 +128,19 @@ header {
   border-radius: 8px;
 }
 
+/*Homepage Button*/
+#searchButton {
+  background-color: navy;
+  color: white;
+  padding: 15px 65px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.searchButton:hover {
+  background-color: darkblue;
+}
 
+/* User Form Styling */
 .user-form {
   flex: 1;
   display: flex;
@@ -137,7 +149,6 @@ header {
   height: auto;
 }
 
-
 #sign-up,
 #login {
   text-align: center;
@@ -145,28 +156,30 @@ header {
   width: 50%;
 }
 
-#sign-up input[type="text"],
-#sign-up input[type="password"],
-#login input[type="text"],
-#login input[type="password"] {
-  text-align: left;
-  padding: 10px;
+/* Form Inputs */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="number"] {
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box; /* makes sure padding doesn't effect txt field size*/
-  width: 40%;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
-#sign-up input[type="text"]:focus,
-#sign-up input[type="password"]:focus,
-#login input[type="text"]:focus,
-#login input[type="password"]:focus {
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus {
   border-color: navy;
   outline: none;
 }
 
-#sign-up input::placeholder,
-#login input::placeholder {
-  text-align: left; /* Placeholder text aligned to the left */
+input::placeholder {
+  color: #999;
+  text-align: left;
 }
 
 .submit-btn {

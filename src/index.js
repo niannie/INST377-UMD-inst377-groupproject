@@ -50,20 +50,18 @@ async function fetchNutrition() {
             const protein = document.createElement('td');
             const carbohydrates = document.createElement('td');
 
-            //TODO: change the returned values to only be up to 1 or 2 decimal points
-            
             // Set cell values or placeholders
             // Uses the ?? (nullish coalescing operator) operator to ensure values default correctly to 'No information available' only when they are null or undefined.
             // This allows for the display of values that are 0
             foodName.innerHTML = product.product_name ?? 'No information available';
-            //FIXME: is returning 'undefined', when it should be 'no information available'
-            calories.innerHTML = product.nutriments ? product.nutriments["energy-kcal"] 
-                // The issue was that dot notation could not be used since there is a hyphen between "energy-kcal," so access it through bracket notation instead
-                : 'No information available';
-            fat.innerHTML = product.nutriments?.fat ?? 'No information available';
-            protein.innerHTML = product.nutriments?.proteins ?? 'No information available';
-            carbohydrates.innerHTML = product.nutriments?.carbohydrates ?? 'No information available';
 
+            // Round the returned values to one decimal place if they exist
+            const getRoundedValue = (value) => value ? parseFloat(value).toFixed(1) : 'No information available';
+            
+            calories.innerHTML = product.nutriments ? getRoundedValue(product.nutriments["energy-kcal"]) : 'No information available';
+            fat.innerHTML = product.nutriments?.fat ? getRoundedValue(product.nutriments.fat) : 'No information available';
+            protein.innerHTML = product.nutriments?.proteins ? getRoundedValue(product.nutriments.proteins) : 'No information available';
+            carbohydrates.innerHTML = product.nutriments?.carbohydrates ? getRoundedValue(product.nutriments.carbohydrates) : 'No information available';
 
             // Append data to the row
             tableRow.appendChild(foodName);
@@ -190,13 +188,10 @@ function loadUserProfile(user) {
     }
 
     const userDocRef = doc(db, "users", user.uid);
-    console.log("Fetching user document:", userDocRef.path);
     getDoc(userDocRef)
         .then((docSnap) => {
         if (docSnap.exists()) {
             const userData = docSnap.data();
-            console.log("User data:", userData); // Log the data for inspection
-
             document.getElementById("userName").textContent = `${userData.firstName}`;
             document.getElementById("userFullName").textContent = `${userData.firstName} ${userData.lastName}`;
             document.getElementById("userEmail").textContent = user.email;
@@ -215,7 +210,6 @@ function loadUserProfile(user) {
 
 // Function for faq page
 function initializeFAQToggle() {
-    console.log('FAQ Toggle Initialized');
     const faqQuestions = document.querySelectorAll(".faq-question");
 
     faqQuestions.forEach((question) => {
@@ -347,7 +341,6 @@ window.onload = async function () {
 
     // Check if the page is the Help page
     if (document.body.classList.contains("help-page")) {
-        console.log('Help page detected');
         initializeFAQToggle();
     }
 };

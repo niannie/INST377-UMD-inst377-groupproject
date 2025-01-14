@@ -18,20 +18,26 @@
                     <p>Please enter login details below</p>
                     
                     <!--Inputted Email-->
-                    <input type="text" name="Email" id="email" placeholder="Email" required><br><br>
+                    <input type="email" name="Email" id="email" placeholder="Email" required><br><br>
                     
                     <!--Inputted Password-->
                     <input type="password" name="Password" id="password" placeholder="Password" required><br><br>
 
-                    <!--Remember Me Checkbox-->
+                    <!--TODO: Remember Me Checkbox-->
                     <!--Look into creating and storing a session token into local storage-->
-                    <input type="checkbox" name="RememberMe" id="rememberMe">
-                    <label for="rememberMe">Remember me</label><br><br>
+                    <!--<input type="checkbox" name="RememberMe" id="rememberMe">
+                    <label for="rememberMe">Remember me</label><br><br>-->
                     
                     <!--Sign up button-->
                     <input type="submit" value="Login" class="submit-btn"><br><br>
                     <p id="back-to-sign-up">Don't have an account?<b><u><a href="join.html">Sign up</a></u></b></p>
+                    <p>
+                        We use Firebase Authentication to sign you in securely. By logging in, you agree to our 
+                        <b><u><a href="/privacy.html" target="_blank">Privacy Policy</a></u></b> and 
+                        <b><u><a href="/terms.html" target="_blank">Terms of Service</a></u></b>
+                    </p>
                 </form>
+                <!-- Authentication Transparency Text -->
             </div>
         </div>
 
